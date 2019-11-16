@@ -231,10 +231,9 @@ class AbsSummarizer(nn.Module):
                     p.data.zero_()
             if(args.use_bert_emb):
                 tgt_embeddings = nn.Embedding(self.vocab_size, self.bert.model.config.hidden_size, padding_idx=0)
-                tgt_embeddings.weight = copy.deepcopy(self.bert.model.embeddings.word_embeddings.weight)
+                tgt_embeddings.weight = copy.deepcopy(self.bert.model.word_embedding.weight)
                 self.decoder.embeddings = tgt_embeddings
                 self.generator[0].weight = self.decoder.embeddings.weight
-        print("~~~~~ Sending model to device!")
         self.to(device)
 
     def forward(self, src, tgt, segs, clss, mask_src, mask_tgt, mask_cls):
