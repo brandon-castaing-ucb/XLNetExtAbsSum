@@ -212,7 +212,6 @@ class AbsSummarizer(nn.Module):
         self.generator = get_generator(self.vocab_size, self.args.dec_hidden_size, device)
         self.generator[0].weight = self.decoder.embeddings.weight
 
-
         if checkpoint is not None:
             self.load_state_dict(checkpoint['model'], strict=True)
         else:
