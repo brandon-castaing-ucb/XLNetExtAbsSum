@@ -1,0 +1,79 @@
+(base) aditi_das@w266final:~/PreSumm/src$ python train.py -task ext -mode test -batch_size 3000 -test_batch_size 500 -bert_data_path ../bert_data/cnndm  -
+test_from ../models/bertext_cnndm_transformer.pt -log_file ../logs/pretrained_ext_bert_cnndm_final -sep_optim true -use_interval true -visible_gpus 0 -rep
+ort_rouge True -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ../results/pretrained_ext_bert_cnndm_final
+[2019-11-18 21:47:35,461 INFO] Loading checkpoint from ../models/bertext_cnndm_transformer.pt
+Namespace(accum_count=1, alpha=0.95, batch_size=3000, beam_size=5, bert_data_path='../bert_data/cnndm', beta1=0.9, beta2=0.999, block_trigram=True, dec_dropout=0.2, dec_ff_size=2048, dec_heads=8, de
+c_hidden_size=768, dec_layers=6, enc_dropout=0.2, enc_ff_size=512, enc_hidden_size=512, enc_layers=6, encoder='bert', ext_dropout=0.2, ext_ff_size=2048, ext_heads=8, ext_hidden_size=768, ext_layers=
+2, finetune_bert=True, generator_shard_size=32, gpu_ranks=[0], label_smoothing=0.1, large=False, load_from_extractive='', log_file='../logs/pretrained_ext_bert_cnndm_final', lr=1, lr_bert=0.002, lr_
+dec=0.002, max_grad_norm=0, max_length=200, max_pos=512, max_tgt_len=140, min_length=50, mode='test', model_path='../models/', optim='adam', param_init=0, param_init_glorot=True, recall_eval=False, 
+report_every=1, report_rouge=True, result_path='../results/pretrained_ext_bert_cnndm_final', save_checkpoint_steps=5, seed=666, sep_optim=True, share_emb=False, task='ext', temp_dir='../temp', test_
+all=False, test_batch_size=500, test_from='../models/bertext_cnndm_transformer.pt', test_start_from=-1, train_from='', train_steps=1000, use_bert_emb=False, use_interval=True, visible_gpus='0', warm
+up_steps=8000, warmup_steps_bert=8000, warmup_steps_dec=8000, world_size=1)
+[2019-11-18 21:47:50,416 INFO] loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at ../temp/4dad0251492946e18ac39290fcfe91b89d37
+0fee250efe9521476438fe8ca185.bf3b9ea126d8c0001ee8a1e8b92229871d06d36d8808208cc2449280da87785c
+[2019-11-18 21:47:50,439 INFO] Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+[2019-11-18 21:47:50,723 INFO] loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-pytorch_model.bin from cache at ../temp/aa1ef1aede4482d0dbcd4d52baad8ae300e6
+0902e88fcb0bebdec09afd232066.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+[2019-11-18 21:48:25,305 INFO] Loading test dataset from ../bert_data/cnndm.test.0.bert.pt, number of examples: 2001
+gpu_rank 0
+[2019-11-18 21:48:25,310 INFO] * number of parameters: 120512513
+[2019-11-18 21:49:01,283 INFO] Loading test dataset from ../bert_data/cnndm.test.1.bert.pt, number of examples: 2001
+[2019-11-18 21:49:36,796 INFO] Loading test dataset from ../bert_data/cnndm.test.2.bert.pt, number of examples: 2001
+[2019-11-18 21:50:12,290 INFO] Loading test dataset from ../bert_data/cnndm.test.3.bert.pt, number of examples: 2001
+[2019-11-18 21:50:47,730 INFO] Loading test dataset from ../bert_data/cnndm.test.4.bert.pt, number of examples: 2000
+[2019-11-18 21:51:23,044 INFO] Loading test dataset from ../bert_data/cnndm.test.5.bert.pt, number of examples: 1485
+11489
+11489
+2019-11-18 21:51:50,142 [MainThread  ] [INFO ]  Writing summaries.
+[2019-11-18 21:51:50,142 INFO] Writing summaries.
+2019-11-18 21:51:50,142 [MainThread  ] [INFO ]  Processing summaries. Saving system files to ../temp/tmpkmvylqnf/system and model files to ../temp/tmpkmvylqnf/model.
+[2019-11-18 21:51:50,142 INFO] Processing summaries. Saving system files to ../temp/tmpkmvylqnf/system and model files to ../temp/tmpkmvylqnf/model.
+2019-11-18 21:51:50,142 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-11-18-21-51-49/candidate/.
+[2019-11-18 21:51:50,142 INFO] Processing files in ../temp/rouge-tmp-2019-11-18-21-51-49/candidate/.
+2019-11-18 21:51:50,994 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpkmvylqnf/system.
+[2019-11-18 21:51:50,994 INFO] Saved processed files to ../temp/tmpkmvylqnf/system.
+2019-11-18 21:51:50,994 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-11-18-21-51-49/reference/.
+[2019-11-18 21:51:50,994 INFO] Processing files in ../temp/rouge-tmp-2019-11-18-21-51-49/reference/.
+2019-11-18 21:51:51,832 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpkmvylqnf/model.
+[2019-11-18 21:51:51,832 INFO] Saved processed files to ../temp/tmpkmvylqnf/model.
+2019-11-18 21:51:51,911 [MainThread  ] [INFO ]  Written ROUGE configuration to ../temp/tmp18dw5mo4/rouge_conf.xml
+[2019-11-18 21:51:51,911 INFO] Written ROUGE configuration to ../temp/tmp18dw5mo4/rouge_conf.xml
+2019-11-18 21:51:51,911 [MainThread  ] [INFO ]  Running ROUGE with command /home/aditi_das/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /home/aditi_das/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ..
+/temp/tmp18dw5mo4/rouge_conf.xml
+[2019-11-18 21:51:51,911 INFO] Running ROUGE with command /home/aditi_das/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /home/aditi_das/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ../temp/tmp18dw5mo4
+/rouge_conf.xml
+---------------------------------------------
+1 ROUGE-1 Average_R: 0.53747 (95%-conf.int. 0.53478 - 0.54019)
+1 ROUGE-1 Average_P: 0.38446 (95%-conf.int. 0.38202 - 0.38700)
+1 ROUGE-1 Average_F: 0.43352 (95%-conf.int. 0.43142 - 0.43565)
+---------------------------------------------
+1 ROUGE-2 Average_R: 0.25077 (95%-conf.int. 0.24798 - 0.25360)
+1 ROUGE-2 Average_P: 0.18011 (95%-conf.int. 0.17792 - 0.18249)
+1 ROUGE-2 Average_F: 0.20247 (95%-conf.int. 0.20014 - 0.20474)
+---------------------------------------------
+1 ROUGE-L Average_R: 0.49141 (95%-conf.int. 0.48877 - 0.49419)
+1 ROUGE-L Average_P: 0.35214 (95%-conf.int. 0.34974 - 0.35470)
+1 ROUGE-L Average_F: 0.39679 (95%-conf.int. 0.39464 - 0.39898)
+[2019-11-18 21:53:45,935 INFO] Rouges at step 0 
+>> ROUGE-F(1/2/3/l): 43.35/20.25/39.68
+ROUGE-R(1/2/3/l): 53.75/25.08/49.14
+[2019-11-18 21:53:45,936 INFO] Validation xent: 5.35811 at step 0
