@@ -1,0 +1,87 @@
+aditi_das@w266final:~/PreSumm/src$ python train.py -task ext -mode test -batch_size 1000 -test_batch_size 200 -bert_data_path ../benchmark_data/cnndm  -test_from ../models/bertext_cnndm_transfor
+mer.pt -log_file ../logs/pretrained_ext_bert_cnndm_benchmark -sep_optim true -use_interval true -visible_gpus 0 -report_rouge True -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path .
+./results/pretrained_ext_bert_cnndm_benchmark -save_checkpoint_steps 500
+
+[2019-11-18 20:55:41,503 INFO] Loading checkpoint from ../models/bertext_cnndm_transformer.pt
+Namespace(accum_count=1, alpha=0.95, batch_size=1000, beam_size=5, bert_data_path='../benchmark_data/cnndm', beta1=0.9, beta2=0.999, block_trigram=True, dec_dropout=0.2, dec_ff_size=2048, dec_heads=8, 
+dec_hidden_size=768, dec_layers=6, enc_dropout=0.2, enc_ff_size=512, enc_hidden_size=512, enc_layers=6, encoder='bert', ext_dropout=0.2, ext_ff_size=2048, ext_heads=8, ext_hidden_size=768, ext_layers=2
+, finetune_bert=True, generator_shard_size=32, gpu_ranks=[0], label_smoothing=0.1, large=False, load_from_extractive='', log_file='../logs/pretrained_ext_bert_cnndm_benchmark', lr=1, lr_bert=0.002, lr_
+dec=0.002, max_grad_norm=0, max_length=200, max_pos=512, max_tgt_len=140, min_length=50, mode='test', model_path='../models/', optim='adam', param_init=0, param_init_glorot=True, recall_eval=False, rep
+ort_every=1, report_rouge=True, result_path='../results/pretrained_ext_bert_cnndm_benchmark', save_checkpoint_steps=500, seed=666, sep_optim=True, share_emb=False, task='ext', temp_dir='../temp', test_
+all=False, test_batch_size=200, test_from='../models/bertext_cnndm_transformer.pt', test_start_from=-1, train_from='', train_steps=1000, use_bert_emb=False, use_interval=True, visible_gpus='0', warmup_
+steps=8000, warmup_steps_bert=8000, warmup_steps_dec=8000, world_size=1)
+[2019-11-18 20:55:42,988 INFO] https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json not found in cache or force_download set to True, downloading to /tmp/tmpm27w45f4
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 313/313 [00:00<00:00, 179567.39B/s]
+[2019-11-18 20:55:43,283 INFO] copying /tmp/tmpm27w45f4 to cache at ../temp/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.bf3b9ea126d8c0001ee8a1e8b92229871d06d36d8808208cc2449280da87
+785c
+[2019-11-18 20:55:43,284 INFO] creating metadata file for ../temp/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.bf3b9ea126d8c0001ee8a1e8b92229871d06d36d8808208cc2449280da87785c
+[2019-11-18 20:55:43,284 INFO] removing temp file /tmp/tmpm27w45f4
+[2019-11-18 20:55:43,284 INFO] loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at ../temp/4dad0251492946e18ac39290fcfe91b89d370fe
+e250efe9521476438fe8ca185.bf3b9ea126d8c0001ee8a1e8b92229871d06d36d8808208cc2449280da87785c
+[2019-11-18 20:55:43,284 INFO] Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+[2019-11-18 20:55:43,570 INFO] https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-pytorch_model.bin not found in cache or force_download set to True, downloading to /tmp/tmppd_h3gxg
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 440473133/440473133 [00:11<00:00, 39747580.28B/s]
+[2019-11-18 20:55:54,930 INFO] copying /tmp/tmppd_h3gxg to cache at ../temp/aa1ef1aede4482d0dbcd4d52baad8ae300e60902e88fcb0bebdec09afd232066.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9
+a157
+[2019-11-18 20:55:55,465 INFO] creating metadata file for ../temp/aa1ef1aede4482d0dbcd4d52baad8ae300e60902e88fcb0bebdec09afd232066.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+[2019-11-18 20:55:55,466 INFO] removing temp file /tmp/tmppd_h3gxg
+[2019-11-18 20:55:55,805 INFO] loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-pytorch_model.bin from cache at ../temp/aa1ef1aede4482d0dbcd4d52baad8ae300e6090
+2e88fcb0bebdec09afd232066.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+[2019-11-18 20:56:04,915 INFO] Loading test dataset from ../benchmark_data/cnndm.test.5.bert.pt, number of examples: 1485
+gpu_rank 0
+[2019-11-18 20:56:04,919 INFO] * number of parameters: 120512513
+1485
+1485
+2019-11-18 20:56:31,564 [MainThread  ] [INFO ]  Writing summaries.
+[2019-11-18 20:56:31,564 INFO] Writing summaries.
+2019-11-18 20:56:31,564 [MainThread  ] [INFO ]  Processing summaries. Saving system files to ../temp/tmpe5xlmo99/system and model files to ../temp/tmpe5xlmo99/model.
+[2019-11-18 20:56:31,564 INFO] Processing summaries. Saving system files to ../temp/tmpe5xlmo99/system and model files to ../temp/tmpe5xlmo99/model.
+2019-11-18 20:56:31,565 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-11-18-20-56-31/candidate/.
+[2019-11-18 20:56:31,565 INFO] Processing files in ../temp/rouge-tmp-2019-11-18-20-56-31/candidate/.
+2019-11-18 20:56:31,678 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpe5xlmo99/system.
+[2019-11-18 20:56:31,678 INFO] Saved processed files to ../temp/tmpe5xlmo99/system.
+2019-11-18 20:56:31,678 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-11-18-20-56-31/reference/.
+[2019-11-18 20:56:31,678 INFO] Processing files in ../temp/rouge-tmp-2019-11-18-20-56-31/reference/.
+2019-11-18 20:56:31,793 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpe5xlmo99/model.
+[2019-11-18 20:56:31,793 INFO] Saved processed files to ../temp/tmpe5xlmo99/model.
+2019-11-18 20:56:31,804 [MainThread  ] [INFO ]  Written ROUGE configuration to ../temp/tmpa7xqg3dw/rouge_conf.xml
+[2019-11-18 20:56:31,804 INFO] Written ROUGE configuration to ../temp/tmpa7xqg3dw/rouge_conf.xml
+2019-11-18 20:56:31,805 [MainThread  ] [INFO ]  Running ROUGE with command /home/aditi_das/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /home/aditi_das/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -
+a ../temp/tmpa7xqg3dw/rouge_conf.xml
+[2019-11-18 20:56:31,805 INFO] Running ROUGE with command /home/aditi_das/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /home/aditi_das/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ../temp/tmpa7xq
+g3dw/rouge_conf.xml
+---------------------------------------------
+1 ROUGE-1 Average_R: 0.53424 (95%-conf.int. 0.52677 - 0.54253)
+1 ROUGE-1 Average_P: 0.37937 (95%-conf.int. 0.37278 - 0.38595)
+1 ROUGE-1 Average_F: 0.42853 (95%-conf.int. 0.42256 - 0.43436)
+---------------------------------------------
+1 ROUGE-2 Average_R: 0.24820 (95%-conf.int. 0.24085 - 0.25596)
+1 ROUGE-2 Average_P: 0.17639 (95%-conf.int. 0.17059 - 0.18219)
+1 ROUGE-2 Average_F: 0.19870 (95%-conf.int. 0.19286 - 0.20481)
+---------------------------------------------
+1 ROUGE-L Average_R: 0.48769 (95%-conf.int. 0.48007 - 0.49558)
+1 ROUGE-L Average_P: 0.34707 (95%-conf.int. 0.34072 - 0.35360)
+1 ROUGE-L Average_F: 0.39165 (95%-conf.int. 0.38552 - 0.39761)
+[2019-11-18 20:56:45,634 INFO] Rouges at step 0 
+>> ROUGE-F(1/2/3/l): 42.85/19.87/39.16
+ROUGE-R(1/2/3/l): 53.42/24.82/48.77
+[2019-11-18 20:56:45,635 INFO] Validation xent: 5.38284 at step 0
