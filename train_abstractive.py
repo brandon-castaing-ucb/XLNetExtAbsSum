@@ -1,4 +1,4 @@
-xlnet-large#!/usr/bin/env python
+#!/usr/bin/env python
 """
     Main training workflow
 """
@@ -222,7 +222,7 @@ def test_abs(args, device_id, pt, step):
     tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased', do_lower_case=False, cache_dir=args.temp_dir)
 
     symbols = {'BOS': tokenizer.sp_model['<s>'], 'EOS': tokenizer.sp_model['</s>'],
-               'PAD': tokenizer.sp_model['<pad>'], 'EOQ': tokenizer.sp_model['<unk>']}
+               'PAD': tokenizer.sp_model['<pad>'], 'EOQ': tokenizer.sp_model['<eop>']}
     predictor = build_predictor(args, tokenizer, symbols, model, logger)
     predictor.translate(test_iter, step)
 
@@ -250,7 +250,7 @@ def test_text_abs(args, device_id, pt, step):
                                        shuffle=False, is_test=True)
     tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased', do_lower_case=False, cache_dir=args.temp_dir)
     symbols = {'BOS': tokenizer.sp_model['<s>'], 'EOS': tokenizer.sp_model['</s>'],
-               'PAD': tokenizer.sp_model['<pad>'], 'EOQ': tokenizer.sp_model['<unk>']}
+               'PAD': tokenizer.sp_model['<pad>'], 'EOQ': tokenizer.sp_model['<eop>']}
     predictor = build_predictor(args, tokenizer, symbols, model, logger)
     predictor.translate(test_iter, step)
 
@@ -327,7 +327,7 @@ def train_abs_single(args, device_id):
     tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased', do_lower_case=False, cache_dir=args.temp_dir)
 
     symbols = {'BOS': tokenizer.sp_model['<s>'], 'EOS': tokenizer.sp_model['</s>'],
-               'PAD': tokenizer.sp_model['<pad>'], 'EOQ': tokenizer.sp_model['<unk>']}
+               'PAD': tokenizer.sp_model['<pad>'], 'EOQ': tokenizer.sp_model['<eop>']}
 
     train_loss = abs_loss(model.generator, symbols, model.vocab_size, device, train=True,
                           label_smoothing=args.label_smoothing)
