@@ -108,15 +108,17 @@ class Translator(object):
         translations = []
         for b in range(batch_size):
             pred_sents = self.vocab.decode([int(n) for n in preds[b][0]])
-            pred_sents = ' '.join(pred_sents).replace(' ##','')
-            pred_sents = ' '.join(pred_sents).replace('fixed','')
+            ##pred_sents = ' '.join(pred_sents).replace(' ##','')
+            ##pred_sents = ' '.join(pred_sents).replace('fixed','')
+            pred_sents = pred_sents.replace('fixed','')
             gold_sent = ' '.join(tgt_str[b].split())
             # translation = Translation(fname[b],src[:, b] if src is not None else None,
             #                           src_raw, pred_sents,
             #                           attn[b], pred_score[b], gold_sent,
             #                           gold_score[b])
             # src = self.spm.DecodeIds([int(t) for t in translation_batch['batch'].src[0][5] if int(t) != len(self.spm)])
-            raw_src = [self.tokenizer.decode(int(t)) for t in src[b]][:500]
+            src500= src[b][:500]
+            raw_src = self.vocab.decode([int(t) for t in src500])
             raw_src = ' '.join(raw_src)
             translation = (pred_sents, gold_sent, raw_src)
             # translation = (pred_sents[0], gold_sent)
@@ -180,6 +182,7 @@ class Translator(object):
                     self.gold_out_file.write(gold_str + '\n')
                     self.src_out_file.write(src.strip() + '\n')
                     ct += 1
+                    print("Data Processed : ",ct)
                 self.can_out_file.flush()
                 self.gold_out_file.flush()
                 self.src_out_file.flush()
