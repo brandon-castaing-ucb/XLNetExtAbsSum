@@ -1,0 +1,50 @@
+[2019-11-24 21:21:45,403 INFO] loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-large-cased-pytorch_model.bin from cache at ../temp/f633f4587594591f65958ee58746db3181da87e4110b3d21a13a8cc98a0a22ab.db8dc8babedbb75a56c36fca3e02b016e19fd682e79fb1a928e03c2df977cace
+[2019-11-24 21:21:59,497 INFO] Loading test dataset from ../bert_data/cnndm.test.0.bert.pt, number of examples: 2001
+gpu_rank 0
+[2019-11-24 21:21:59,502 INFO] * number of parameters: 377071617
+
+
+[2019-11-24 21:25:03,074 INFO] Loading test dataset from ../bert_data/cnndm.test.1.bert.pt, number of examples: 2001
+
+
+[2019-11-24 21:28:06,508 INFO] Loading test dataset from ../bert_data/cnndm.test.2.bert.pt, number of examples: 2001
+[2019-11-24 21:31:09,836 INFO] Loading test dataset from ../bert_data/cnndm.test.3.bert.pt, number of examples: 2001
+[2019-11-24 21:34:13,639 INFO] Loading test dataset from ../bert_data/cnndm.test.4.bert.pt, number of examples: 2001
+
+[2019-11-24 21:37:17,053 INFO] Loading test dataset from ../bert_data/cnndm.test.5.bert.pt, number of examples: 392
+10397
+10397
+2019-11-24 21:37:53,589 [MainThread  ] [INFO ]  Writing summaries.
+[2019-11-24 21:37:53,589 INFO] Writing summaries.
+2019-11-24 21:37:53,590 [MainThread  ] [INFO ]  Processing summaries. Saving system files to ../temp/tmpq5odpf_o/system and model files to ../temp/tmpq5odpf_o/model.
+[2019-11-24 21:37:53,590 INFO] Processing summaries. Saving system files to ../temp/tmpq5odpf_o/system and model files to ../temp/tmpq5odpf_o/model.
+2019-11-24 21:37:53,590 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-11-24-21-37-52/candidate/.
+[2019-11-24 21:37:53,590 INFO] Processing files in ../temp/rouge-tmp-2019-11-24-21-37-52/candidate/.
+2019-11-24 21:37:54,540 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpq5odpf_o/system.
+[2019-11-24 21:37:54,540 INFO] Saved processed files to ../temp/tmpq5odpf_o/system.
+2019-11-24 21:37:54,541 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-11-24-21-37-52/reference/.
+[2019-11-24 21:37:54,541 INFO] Processing files in ../temp/rouge-tmp-2019-11-24-21-37-52/reference/.
+2019-11-24 21:37:55,491 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpq5odpf_o/model.
+[2019-11-24 21:37:55,491 INFO] Saved processed files to ../temp/tmpq5odpf_o/model.
+2019-11-24 21:37:55,584 [MainThread  ] [INFO ]  Written ROUGE configuration to ../temp/tmpgzqulixg/rouge_conf.xml
+[2019-11-24 21:37:55,584 INFO] Written ROUGE configuration to ../temp/tmpgzqulixg/rouge_conf.xml
+2019-11-24 21:37:55,584 [MainThread  ] [INFO ]  Running ROUGE with command /root/pyrouge/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /root/pyrouge/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ../temp/tmpgzqulixg/rouge_conf.xml
+[2019-11-24 21:37:55,584 INFO] Running ROUGE with command /root/pyrouge/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /root/pyrouge/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ../temp/tmpgzqulixg/rouge_conf.xml
+---------------------------------------------
+1 ROUGE-1 Average_R: 0.50048 (95%-conf.int. 0.49756 - 0.50331)
+1 ROUGE-1 Average_P: 0.36022 (95%-conf.int. 0.35770 - 0.36270)
+1 ROUGE-1 Average_F: 0.40548 (95%-conf.int. 0.40330 - 0.40767)
+---------------------------------------------
+1 ROUGE-2 Average_R: 0.21980 (95%-conf.int. 0.21690 - 0.22246)
+1 ROUGE-2 Average_P: 0.15867 (95%-conf.int. 0.15643 - 0.16091)
+1 ROUGE-2 Average_F: 0.17818 (95%-conf.int. 0.17570 - 0.18048)
+---------------------------------------------
+1 ROUGE-L Average_R: 0.45632 (95%-conf.int. 0.45351 - 0.45911)
+1 ROUGE-L Average_P: 0.32881 (95%-conf.int. 0.32641 - 0.33124)
+1 ROUGE-L Average_F: 0.36994 (95%-conf.int. 0.36763 - 0.37217)
+
+[2019-11-24 21:40:00,872 INFO] Rouges at step 1000
+>> ROUGE-F(1/2/3/l): 40.55/17.82/36.99
+ROUGE-R(1/2/3/l): 50.05/21.98/45.63
+
+[2019-11-24 21:40:00,872 INFO] Validation xent: 6.04629 at step 1000
