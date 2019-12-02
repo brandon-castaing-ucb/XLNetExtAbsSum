@@ -1,0 +1,35 @@
+[2019-12-02 11:20:38,709 INFO] Calculating Rouge
+10397
+10397
+2019-12-02 11:20:39,504 [MainThread  ] [INFO ]  Writing summaries.
+[2019-12-02 11:20:39,504 INFO] Writing summaries.
+2019-12-02 11:20:39,505 [MainThread  ] [INFO ]  Processing summaries. Saving system files to ../temp/tmpu2zgm8t8/system and model files to ../temp/tmpu2zgm8t8/model.
+[2019-12-02 11:20:39,505 INFO] Processing summaries. Saving system files to ../temp/tmpu2zgm8t8/system and model files to ../temp/tmpu2zgm8t8/model.
+2019-12-02 11:20:39,505 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-12-02-11-20-38/candidate/.
+[2019-12-02 11:20:39,505 INFO] Processing files in ../temp/rouge-tmp-2019-12-02-11-20-38/candidate/.
+2019-12-02 11:20:40,355 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpu2zgm8t8/system.
+[2019-12-02 11:20:40,355 INFO] Saved processed files to ../temp/tmpu2zgm8t8/system.
+2019-12-02 11:20:40,355 [MainThread  ] [INFO ]  Processing files in ../temp/rouge-tmp-2019-12-02-11-20-38/reference/.
+[2019-12-02 11:20:40,355 INFO] Processing files in ../temp/rouge-tmp-2019-12-02-11-20-38/reference/.
+2019-12-02 11:20:41,320 [MainThread  ] [INFO ]  Saved processed files to ../temp/tmpu2zgm8t8/model.
+[2019-12-02 11:20:41,320 INFO] Saved processed files to ../temp/tmpu2zgm8t8/model.
+2019-12-02 11:20:41,413 [MainThread  ] [INFO ]  Written ROUGE configuration to ../temp/tmpqyyirvc0/rouge_conf.xml
+[2019-12-02 11:20:41,413 INFO] Written ROUGE configuration to ../temp/tmpqyyirvc0/rouge_conf.xml
+2019-12-02 11:20:41,414 [MainThread  ] [INFO ]  Running ROUGE with command /root/pyrouge/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /root/pyrouge/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ../temp/tmpqyyirvc0/rouge_conf.xml
+[2019-12-02 11:20:41,414 INFO] Running ROUGE with command /root/pyrouge/rouge/tools/ROUGE-1.5.5/ROUGE-1.5.5.pl -e /root/pyrouge/rouge/tools/ROUGE-1.5.5/data -c 95 -m -r 1000 -n 2 -a ../temp/tmpqyyirvc0/rouge_conf.xml
+---------------------------------------------
+1 ROUGE-1 Average_R: 0.06677 (95%-conf.int. 0.06620 - 0.06736)
+1 ROUGE-1 Average_P: 0.20059 (95%-conf.int. 0.19868 - 0.20248)
+1 ROUGE-1 Average_F: 0.09815 (95%-conf.int. 0.09733 - 0.09895)
+---------------------------------------------
+1 ROUGE-2 Average_R: 0.00061 (95%-conf.int. 0.00055 - 0.00068)
+1 ROUGE-2 Average_P: 0.00203 (95%-conf.int. 0.00183 - 0.00223)
+1 ROUGE-2 Average_F: 0.00092 (95%-conf.int. 0.00083 - 0.00102)
+---------------------------------------------
+1 ROUGE-L Average_R: 0.05761 (95%-conf.int. 0.05713 - 0.05812)
+1 ROUGE-L Average_P: 0.17262 (95%-conf.int. 0.17098 - 0.17432)
+1 ROUGE-L Average_F: 0.08464 (95%-conf.int. 0.08394 - 0.08537)
+
+[2019-12-02 11:21:50,972 INFO] Rouges at step 25000
+>> ROUGE-F(1/2/3/l): 9.81/0.09/8.46
+ROUGE-R(1/2/3/l): 6.68/0.06/5.76
